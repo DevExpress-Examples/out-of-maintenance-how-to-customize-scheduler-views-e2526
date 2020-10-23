@@ -5,7 +5,7 @@
         xmlns:local="clr-namespace:WpfApplication1"
         xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduler"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
-        xmlns:dxschcore="clr-namespace:DevExpress.XtraScheduler;assembly=DevExpress.XtraScheduler.v14.2.Core"
+        xmlns:dxschcore="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/core"
         Title="MainWindow" Height="600" Width="1024">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -92,7 +92,7 @@
             <dxsch:SchedulerControl.FullWeekView>
                 <dxsch:FullWeekView AllDayAreaScrollBarVisible="True" AppointmentPadding="0" Enabled="True">
                     <dxsch:FullWeekView.WorkTime>
-                        <dxschcore:WorkTimeInterval End="18:0:0" Start="9:0:0"/>
+                        <dxschcore:WorkTimeInterval End="18:0:0" Start="9:0:0" />
                     </dxsch:FullWeekView.WorkTime>
                 </dxsch:FullWeekView>
             </dxsch:SchedulerControl.FullWeekView>
