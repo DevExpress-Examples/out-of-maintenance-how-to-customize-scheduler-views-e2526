@@ -92,7 +92,7 @@
             <dxsch:SchedulerControl.FullWeekView>
                 <dxsch:FullWeekView AllDayAreaScrollBarVisible="True" AppointmentPadding="0" Enabled="True">
                     <dxsch:FullWeekView.WorkTime>
-                        <dxschcore:WorkTimeInterval End="18:0:0" Start="9:0:0" />
+                        <dxschcore:WorkTimeInterval End="18:0:0" Start="9:0:0"/>
                     </dxsch:FullWeekView.WorkTime>
                 </dxsch:FullWeekView>
             </dxsch:SchedulerControl.FullWeekView>
