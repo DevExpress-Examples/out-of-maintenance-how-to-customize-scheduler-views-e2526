@@ -4,7 +4,7 @@
         xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:local="clr-namespace:WpfApplication1"
         xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduler"
-        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         xmlns:dxschcore="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/core"
         Title="MainWindow" Height="600" Width="1024">
     <Grid>
@@ -14,23 +14,22 @@
         </Grid.ColumnDefinitions>
 
         <!--region #SwitchViews-->
-    <GroupBox Header="View Types" Grid.Column="0">
-        <dx:RadioButtonList x:Name="viewType" Margin="4" 
+        <GroupBox Header="View Types" Grid.Column="0">
+            <dxe:ListBoxEdit x:Name="viewType" Margin="4" 
             HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
-            Background="{x:Null}" 
-            SelectedValue="{Binding ElementName=schedulerControl1, Path=ActiveViewType, Mode=TwoWay}">
-            <dx:RadioButtonList.ItemsSource>
-                <collections:ArrayList>
-                    <dxschcore:SchedulerViewType>Day</dxschcore:SchedulerViewType>
+            EditValue="{Binding ElementName=schedulerControl1, Path=ActiveViewType, Mode=TwoWay}">
+                <dxe:ListBoxEdit.ItemsSource>
+                    <collections:ArrayList>
+                        <dxschcore:SchedulerViewType>Day</dxschcore:SchedulerViewType>
                         <dxschcore:SchedulerViewType>FullWeek</dxschcore:SchedulerViewType>
                         <dxschcore:SchedulerViewType>Week</dxschcore:SchedulerViewType>
-                    <dxschcore:SchedulerViewType>WorkWeek</dxschcore:SchedulerViewType>
-                    <dxschcore:SchedulerViewType>Month</dxschcore:SchedulerViewType>
-                    <dxschcore:SchedulerViewType>Timeline</dxschcore:SchedulerViewType>
-                </collections:ArrayList>
-            </dx:RadioButtonList.ItemsSource>
-        </dx:RadioButtonList>
-    </GroupBox>
+                        <dxschcore:SchedulerViewType>WorkWeek</dxschcore:SchedulerViewType>
+                        <dxschcore:SchedulerViewType>Month</dxschcore:SchedulerViewType>
+                        <dxschcore:SchedulerViewType>Timeline</dxschcore:SchedulerViewType>
+                    </collections:ArrayList>
+                </dxe:ListBoxEdit.ItemsSource>
+            </dxe:ListBoxEdit>
+        </GroupBox>
         <!--endregion #SwitchViews-->
 
         <dxsch:SchedulerControl Name="schedulerControl1" Grid.Column="1" 
@@ -130,7 +129,7 @@
             <!--region #TimelineView-->
             <dxsch:SchedulerControl.TimelineView>
                 <dxsch:TimelineView IntervalCount="12" 
-                                TimelineScrollBarVisible="False">
+                                    TimelineScrollBarVisibility="Never">
                     <dxsch:TimelineView.Scales>
                         <dxschcore:TimeScaleCollection>
                             <dxschcore:TimeScaleMonth />
